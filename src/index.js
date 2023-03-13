@@ -1,13 +1,26 @@
 import cipher from './cipher.js';
 
 const encodeButton = document.getElementById("encodeButton");
-const encodeText = document.getElementById("encodeText");
 const decodeButton = document.getElementById("decodeButton");
-const decodeText = document.getElementById("decodeText");
 
 
-encodeButton.addEventListener("click",cipher.encode(encodeText));
-decodeButton.addEventListener("click",cipher.decode(decodeText));
+function encodeInputToText(){
+    const encodeText = document.getElementById("encodeText").value;
+    const offsetNumber1 = document.getElementById("offsetNumber1").value;
+    cipher.encode(encodeText,offsetNumber1);
+}
+
+function decodeInputToText(){
+    const decodeText = document.getElementById("decodeText").value;
+    const offsetNumber2 = document.getElementById("offsetNumber2").value;
+    cipher.decode(decodeText,offsetNumber2);
+}
+
+
+
+encodeButton.addEventListener("click",encodeInputToText);
+decodeButton.addEventListener("click",decodeInputToText);
 
 
 console.log(cipher);
+
