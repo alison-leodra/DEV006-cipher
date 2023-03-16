@@ -1,42 +1,54 @@
 const cipher = {
-  
- encode: (param1,param2)=> {
-    const toEncode = param1;
-    const offsetNumber1 = param2;
-    let charsNum = toEncode.length;
-    let encodeFinal="";
 
-    for (let i=0 ; i < charsNum ; i++)
-    {
+  encode: (offset, mensaje) => {
+    const toEncode = mensaje;
+    const offsetNumber1 = offset;
+    const charsNum = toEncode.length;
+    let encodeFinal = "";
 
-    let ascciNum = toEncode.charCodeAt(i);
-    let newNum = (parseInt(ascciNum) + parseInt(offsetNumber1))
+    for (let i = 0; i < charsNum; i++) {
 
-    if (parseInt(ascciNum)!= 32 ){
+      const ascciNum = toEncode.charCodeAt(i);
 
-      if (newNum > 90){
-      let newChar = String.fromCharCode(((newNum-65)%26)+65);
-      encodeFinal = encodeFinal + newChar;
+      if (parseInt(ascciNum) !== 32) {
+
+        const newChar = String.fromCharCode((((parseInt(ascciNum) + parseInt(offsetNumber1)) - 65) % 26) + 65);
+        encodeFinal = encodeFinal + newChar;
       }
-      else{
-      let newChar = String.fromCharCode(newNum);
-      encodeFinal = encodeFinal + newChar;
+
+      else if (parseInt(ascciNum) === 32) {
+        encodeFinal = encodeFinal + " ";
       }
     }
-    else{
-      encodeFinal = encodeFinal + " ";
+    console.log(encodeFinal)
+    return encodeFinal;
+  },
+
+  decode: (offset, mensaje) => {
+    const toDecode = mensaje;
+    const offsetNumber2 = offset;
+    const charsNum = toDecode.length;
+    let decodeFinal = "";
+
+    for (let i = 0; i < charsNum; i++) {
+
+      const ascciNum = toDecode.charCodeAt(i);
+
+      if (parseInt(ascciNum) !== 32) {
+
+        const newChar = String.fromCharCode((((parseInt(ascciNum) - 90) - parseInt(offsetNumber2)) % 26) + 90);
+        decodeFinal = decodeFinal + newChar;
+      }
+
+      else if (parseInt(ascciNum) === 32) {
+        decodeFinal = decodeFinal + " ";
+
+      }
     }
-   }
-   console.log(encodeFinal)
-   alert(encodeFinal);
- },
 
- decode: (param1,param2)=>{
-    let toDecode =param1;
-    const offsetNumber2 = param2;
-    let charsNum = toDecode.length;
-    alert(toDecode.charCodeAt(0))
-  } 
- }
+    console.log(decodeFinal)
+    return decodeFinal;
+  }
 
+}
 export default cipher;
