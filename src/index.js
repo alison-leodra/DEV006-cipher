@@ -5,13 +5,13 @@ const decodeButton = document.getElementById("decodeButton");
 
 function encodeInputToText() {
   const encodeText = document.getElementById("encodeText").value;
-  const offsetNumber1 = document.getElementById("offsetNumber1").value;
+  const offsetNumber1 = parseInt(document.getElementById("offsetNumber1").value);
   cipher.encode(offsetNumber1, encodeText);
 }
 
 function decodeInputToText() {
   const decodeText = document.getElementById("decodeText").value;
-  const offsetNumber2 = document.getElementById("offsetNumber2").value;
+  const offsetNumber2 = parseInt(document.getElementById("offsetNumber2").value);
   cipher.decode(offsetNumber2, decodeText);
 }
 
