@@ -6,7 +6,7 @@ const cipher = {
     const charsNum = toEncode.length;
     let encodeFinal = "";
 
-    if (Number.isNaN(offsetNumber1) || offsetNumber1 <= 0) {
+    if (Number.isNaN(offsetNumber1) || offsetNumber1 <= 0 || (Number.isInteger(offsetNumber1) === "False")) {
       throw new TypeError("Argumento INPUT OFFSET invalido");
     }
     else if (mensaje === "") {
@@ -28,6 +28,7 @@ const cipher = {
           encodeFinal = encodeFinal + " ";
         }
       }
+
     }
     console.log(encodeFinal)
     return encodeFinal;
@@ -39,7 +40,7 @@ const cipher = {
     const charsNum = toDecode.length;
     let decodeFinal = "";
 
-    if (Number.isNaN(offsetNumber2) || offsetNumber2 <= 0) {
+    if (Number.isNaN(offsetNumber2) || offsetNumber2 <= 0 || (Number.isInteger(offsetNumber2) === "False")) {
       throw new TypeError("El offset no es un Numero");
     }
     else if (mensaje === "") {
@@ -61,7 +62,6 @@ const cipher = {
           decodeFinal = decodeFinal + " ";
         }
       }
-      console.log(decodeFinal)
       return decodeFinal;
     }
   }

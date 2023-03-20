@@ -8,25 +8,42 @@
 </head>
 
 <body>
-
-  <div id="root">
-    <h1>BIENVENIDO A "ENCRIPTED"</h1>
+  <nav id="nav" >
+    <img id="logo" src="starWarsLogo.png" alt="logo-starWars">
+    <ul class="list" >
+      <li class="liList" >La Resistencia</li>
+      <li class="liList" >El Imperio</li>
+      <li class="liList" >Unirse</li>
+    </ul>
+  </nav>
+  <div id="initialPage">
+    <p class="presentation">Es momento de apoyar a La Resistencia</p>
+    <p class="presentation">Cifra y descifra mensajes y derrotemos al Imperio</p>
+      <button id="goEncode">Cifrar</button> 
+      <button id="goDecode">Descifrar</button>
+      <img id="imageR2D2" src="Group 1.png" alt="R2D2">
   </div>
 
   <section id="encodeSection">
-    <p>Inserte el mensaje a cifrar</p>
-    <input id="encodeText" type="text"><br>
-    <p>Offset</p>
-    <input id="offsetNumber1" type="number"><br>
-    <button id="encodeButton">Cifrar</button>
+    <p class="generalText">Inserte el mensaje a cifrar</p>
+    <input id="encodeText" type="text" class="inputs"><br>
+    <p class="generalText">Offset</p>
+    <input id="offsetNumber1" type="number" class="inputs"><br>
+    <button id="encodeButton">Cifrar Mensaje</button>
+    <div id="mensajeCifrado1" class="text"></div>
+    <button id="backStartEncode">Volver al inicio</button>
+    <img id="imageBB8" src="Group 2.png" alt="BB8">
   </section>
 
   <section id="decodeSection">
-    <p>Inserte mensaje a descifrar</p>
-    <input id="decodeText" type="text"><br>
-    <p>Offset</p>
-    <input id="offsetNumber2" type="number"><br>
-    <button id="decodeButton">Descifrar</button>
+    <p class="generalText">Inserte mensaje a descifrar</p>
+    <input id="decodeText" type="text" class="inputs"><br>
+    <p class="generalText">Offset</p>
+    <input id="offsetNumber2" type="number" class="inputs"><br>
+    <button id="decodeButton">Descifrar Mensaje</button>
+    <div id="mensajeCifrado2" class="text"></div>
+    <button id="backStartDecode">Volver al inicio</button>
+    <img id="imageC3PO" src="Group 3.png" alt="C3PO">
   </section>
 
   <script src="index.js" type="module"></script>
