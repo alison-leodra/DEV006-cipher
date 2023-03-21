@@ -8,42 +8,43 @@
 </head>
 
 <body>
-  <nav id="nav" >
+  <nav id="nav">
     <img id="logo" src="starWarsLogo.png" alt="logo-starWars">
-    <ul class="list" >
-      <li class="liList" >La Resistencia</li>
-      <li class="liList" >El Imperio</li>
-      <li class="liList" >Unirse</li>
+    <ul class="list">
+      <li class="liList">La Resistencia</li>
+      <li class="liList">El Imperio</li>
+      <li class="liList">Unirse</li>
     </ul>
   </nav>
-  <div id="initialPage">
-    <p class="presentation">Es momento de apoyar a La Resistencia</p>
-    <p class="presentation">Cifra y descifra mensajes y derrotemos al Imperio</p>
-      <button id="goEncode">Cifrar</button> 
-      <button id="goDecode">Descifrar</button>
-      <img id="imageR2D2" src="Group 1.png" alt="R2D2">
+  <div id="initialPage" >
+    <p class="presentation">Es momento de <br> apoyar a <br>La Resistencia <br><br>
+    Cifra o descifra <br> mensajes y<br> derrotemos al <br>Imperio</p>
+    <button class="buttons" id="goEncode">Cifrar</button>
+    <button class="buttons" id="goDecode">Descifrar</button>
+    <div id="fondoAzul"></div>
+    <div id="divImg"><img id="imageR2D2" src="Group 1.png" alt="R2D2"></div>
   </div>
 
   <section id="encodeSection">
-    <p class="generalText">Inserte el mensaje a cifrar</p>
-    <input id="encodeText" type="text" class="inputs"><br>
-    <p class="generalText">Offset</p>
+    <p id="firstTextEncode" class="generalText">Inserte El Mensaje A Cifrar</p>
+    <input id="encodeText" type="text" class="inputs" placeholder="HOLA LABORATORIA"><br>
+    <p id="secondTextEncode" class="generalText">Codigo Secreto</p>
     <input id="offsetNumber1" type="number" class="inputs"><br>
-    <button id="encodeButton">Cifrar Mensaje</button>
+    <button class="buttons" id="encodeButton">Cifrar Mensaje</button>
     <div id="mensajeCifrado1" class="text"></div>
-    <button id="backStartEncode">Volver al inicio</button>
-    <img id="imageBB8" src="Group 2.png" alt="BB8">
+    <button class="buttons" id="backStartEncode">Volver al inicio</button>
+    <div id="fondoNaranjo"><img id="imageBB8" src="Group 2.png" alt="BB8"></div>
   </section>
 
   <section id="decodeSection">
-    <p class="generalText">Inserte mensaje a descifrar</p>
-    <input id="decodeText" type="text" class="inputs"><br>
-    <p class="generalText">Offset</p>
+    <p id="firstTextDecode" class="generalText">Inserte El Mensaje A Descifrar</p>
+    <input id="decodeText" type="text" class="inputs" placeholder="HOLA LABORATORIA"><br>
+    <p id="secondTextDecode" class="generalText">Codigo Secreto</p>
     <input id="offsetNumber2" type="number" class="inputs"><br>
-    <button id="decodeButton">Descifrar Mensaje</button>
+    <button class="buttons" id="decodeButton">Descifrar Mensaje</button>
     <div id="mensajeCifrado2" class="text"></div>
-    <button id="backStartDecode">Volver al inicio</button>
-    <img id="imageC3PO" src="Group 3.png" alt="C3PO">
+    <button class="buttons" id="backStartDecode">Volver al inicio</button>
+    <div id="fondoAmarillo"><img id="imageC3PO" src="Group 3.png" alt="C3PO"></div>
   </section>
 
   <script src="index.js" type="module"></script>
