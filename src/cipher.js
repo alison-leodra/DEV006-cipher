@@ -13,22 +13,17 @@ const cipher = {
       throw new TypeError("Argumento INPUT TEXTO invalido ");
     }
     else {
-
       for (let i = 0; i < charsNum; i++) {
-
         const ascciNum = toEncode.charCodeAt(i);
-
         if (parseInt(ascciNum) !== 32) {
 
-          const newChar = String.fromCharCode((((parseInt(ascciNum) + offsetNumber1) - 65) % 26) + 65);
+          const newChar = String.fromCharCode((((parseInt(ascciNum) + offsetNumber1) - 33) % 94) + 33);
           encodeFinal = encodeFinal + newChar;
         }
-
         else if (parseInt(ascciNum) === 32) {
           encodeFinal = encodeFinal + " ";
         }
       }
-
     }
     console.log(encodeFinal)
     return encodeFinal;
@@ -47,17 +42,12 @@ const cipher = {
       throw new TypeError("EL mensaje a cifrar no es un texto");
     }
     else {
-
       for (let i = 0; i < charsNum; i++) {
-
         const ascciNum = toDecode.charCodeAt(i);
-
         if (parseInt(ascciNum) !== 32) {
-
-          const newChar = String.fromCharCode((((parseInt(ascciNum) - 90) - offsetNumber2) % 26) + 90);
+          const newChar = String.fromCharCode((((parseInt(ascciNum) - 126) - offsetNumber2) % 94) + 126);
           decodeFinal = decodeFinal + newChar;
         }
-
         else if (parseInt(ascciNum) === 32) {
           decodeFinal = decodeFinal + " ";
         }
