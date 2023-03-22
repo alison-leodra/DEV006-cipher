@@ -16,17 +16,26 @@ const cipher = {
       for (let i = 0; i < charsNum; i++) {
         const ascciNum = toEncode.charCodeAt(i);
         if (parseInt(ascciNum) !== 32) {
-
-          const newChar = String.fromCharCode((((parseInt(ascciNum) + offsetNumber1) - 33) % 94) + 33);
-          encodeFinal = encodeFinal + newChar;
+          if (parseInt(ascciNum) < 91 & parseInt(ascciNum) > 64) {
+            const newChar = String.fromCharCode((((parseInt(ascciNum) + offsetNumber1) - 65) % 26) + 65);
+            encodeFinal = encodeFinal + newChar;
+          }
+          else if (parseInt(ascciNum) > 96 & parseInt(ascciNum) < 123) {
+            const newChar = String.fromCharCode((((parseInt(ascciNum) + offsetNumber1) - 97) % 26) + 97);
+            encodeFinal = encodeFinal + newChar;
+          }
+          else {
+            const newChar = String.fromCharCode((((parseInt(ascciNum) + offsetNumber1) - 33) % 32) + 33);
+            encodeFinal = encodeFinal + newChar;
+          }
         }
         else if (parseInt(ascciNum) === 32) {
           encodeFinal = encodeFinal + " ";
         }
       }
     }
-    console.log(encodeFinal)
     return encodeFinal;
+
   },
 
   decode: (offset, mensaje) => {
@@ -45,8 +54,18 @@ const cipher = {
       for (let i = 0; i < charsNum; i++) {
         const ascciNum = toDecode.charCodeAt(i);
         if (parseInt(ascciNum) !== 32) {
-          const newChar = String.fromCharCode((((parseInt(ascciNum) - 126) - offsetNumber2) % 94) + 126);
-          decodeFinal = decodeFinal + newChar;
+          if (parseInt(ascciNum) < 91 & parseInt(ascciNum) > 64) {
+            const newChar = String.fromCharCode((((parseInt(ascciNum) - 90) - offsetNumber2) % 26) + 90);
+            decodeFinal = decodeFinal + newChar;
+          }
+          else if (parseInt(ascciNum) > 96 & parseInt(ascciNum) < 123) {
+            const newChar = String.fromCharCode((((parseInt(ascciNum) - 122) - offsetNumber2) % 26) + 122);
+            decodeFinal = decodeFinal + newChar;
+          }
+          else {
+            const newChar = String.fromCharCode((((parseInt(ascciNum) - 64) - offsetNumber2) % 26) + 64);
+            decodeFinal = decodeFinal + newChar;
+          }
         }
         else if (parseInt(ascciNum) === 32) {
           decodeFinal = decodeFinal + " ";
