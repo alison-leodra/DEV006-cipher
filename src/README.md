@@ -8,6 +8,11 @@ La experiencia que se le ofrece al usuario basica,pero se trato de implementar u
 Se decidio el color oscuro como color principal ya que se asemeja a la galaxia ademas de dar un mejor contraste a los elementos de decoracion que son personajes de la saga con sus colores representativos.
 ademas de dejar los texto,botones e inputs con un color blanco con el proposito de que resalten en la pantalla.
 
+## Prototipado
+* Se comenzo con el prototipo de fidelidad baja
+* luego se icieron cambios una vez que se paso a alta fidelidad
+* se decidio no llevar el diseno de alta fidelidada a un 100% por nivel de CSS.
+
 ## Funcionalidades
 * cambio de interfaces a travez de accionar de botones
 * cifrado y descifrado de texto introducido por el usuario cambiando el   aspecto del mensaje a travez de un codigo elegido por el usuario igualmente.
